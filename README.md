@@ -8,23 +8,27 @@ For your own iOS project you need to copy and import the **Sunny.framework** fil
 Step 1: Select your proj file, go to General tab while selecting your app target and ensure that **Sunny.framework** has been added to **Embedded Binaries** as well as **Linked Frameworks and Libraries**
 
 Step 2: Go to Info tab to edit your project’s Info.plist and add the following key value pairs:
+
 	```
 	App Transport Security Settings: {
 	Allow Arbitrary Loads: YES }
 	```
 
 Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lines of code in didFinishLaunchingWithOptions method:
+        
         ```
         let smlManager = SMLManager.sharedInstance()
         let token = "ef4dfc79-e266-490b-b842-13b9384a0985"
         //SMLManager used for Initializing with your token
         smlManager.initialize(withToken: token)
         ```
+        
  > the token can be created here (iOS_SDK):http://sunnymob.com/dev/apps/index
  
   Step 4: You can now use any of the following two methods to show advertisement in your application:
   
   A)
+  
     	```	
     	let smlManager = SMLManager.sharedInstance()
 
@@ -48,6 +52,7 @@ Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lin
         ```
         
   B)
+  
   	```
     	let smlManager = SMLManager.sharedInstance()
         //If doesnt want to do anything, pass the call back method as nil
