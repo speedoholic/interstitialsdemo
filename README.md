@@ -9,19 +9,19 @@ Step 1: Select your proj file, go to General tab while selecting your app target
 
 Step 2: Go to Info tab to edit your project’s Info.plist and add the following key value pairs:
 
-	```
+	
 	App Transport Security Settings: {
 	Allow Arbitrary Loads: YES }
-	```
+	
 
 Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lines of code in didFinishLaunchingWithOptions method:
         
-        ```
+        
         let smlManager = SMLManager.sharedInstance()
         let token = "ef4dfc79-e266-490b-b842-13b9384a0985"
         //SMLManager used for Initializing with your token
         smlManager.initialize(withToken: token)
-        ```
+        
         
  > the token can be created here (iOS_SDK):http://sunnymob.com/dev/apps/index
  
@@ -29,7 +29,7 @@ Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lin
   
   A)
   
-    	```	
+    	
     	let smlManager = SMLManager.sharedInstance()
 
         //SMLManager usage for showing the contorller
@@ -49,15 +49,15 @@ Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lin
                 break
             }
         })
-        ```
+        
         
   B)
   
-  	```
+  	
     	let smlManager = SMLManager.sharedInstance()
         //If doesnt want to do anything, pass the call back method as nil
         smlManager.showAdvertisement(self, didFinish: nil)
-        ```
+        
 
 **The call back method mentioned in part A can be used to learn if the ad is ready. You can use this opportunity to call the smlManager.showAdvertisement method again since it means that the ad was not ready when you called it last time.**
 
