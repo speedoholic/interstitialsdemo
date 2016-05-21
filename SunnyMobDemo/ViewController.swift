@@ -22,13 +22,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAdButtonTapped(sender: AnyObject) {
-        showAd()
+        showAdWithCallback()
     }
     
-    func showAd() {
+    
+    func showAdWithCallback () {
+        
         let smlManager = SMLManager.sharedInstance()
-        //If doesnt want to do anything, pass the call back method as nil
-        smlManager.showAdvertisement(self, didFinish: nil)
+        
+        smlManager.showAdvertisement(self, didFinish: {
+            (status: SMLAdvertisementStatus) in
+            
+            //Use callback status returned by the SDK
+            switch status {
+                case .Complete:
+                    //print("Ad shown to user successfully")
+                    break
+                case .Ready:
+                    print("NOW READY TO SHOW AD")
+                    //If your application is having user intensive functionality, you can choose to comment the following line of code.
+                    smlManager.showAdvertisement(self, didFinish: nil)
+                    break
+                case .Error:
+                    print("Error! Please check your token or contact SunnyMob Customer Care")
+                    break
+            }
+        })
     }
 
 
