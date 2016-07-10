@@ -32,23 +32,27 @@ Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lin
     	
     	let smlManager = SMLManager.sharedInstance()
 
-        //SMLManager usage for showing the contorller
+        //SMLManager used for showing the ad on present view contorller
 
         smlManager.showAdvertisement(self, didFinish: {
             (status: SMLAdvertisementStatus) in
-            //Do something with the call back
+            
+            //Use callback status returned by the SDK
             switch status {
-            case .Complete:
-                    print("Complete")
-                break
-            case .Ready:
-                    print("READY TO SHOW AD")
-                break
-            case .Error:
-                    print("Error")
-                break
+                case .Complete:
+                    //print("Ad shown to user successfully")
+                    break
+                case .Ready:
+                    print("NOW READY TO SHOW AD")
+                    //If your application is having user intensive functionality, you can choose to comment the following line of code.
+                    smlManager.showAdvertisement(self, didFinish: nil)
+                    break
+                case .Error:
+                    print("Error! Please check your token or contact SunnyMob Customer Care")
+                    break
             }
         })
+
         
         
   B)
