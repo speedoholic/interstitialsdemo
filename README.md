@@ -20,49 +20,35 @@ Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lin
         let smlManager = SMLManager.sharedInstance()
         let token = "ef4dfc79-e266-490b-b842-13b9384a0985"
         //SMLManager used for Initializing with your token
-        smlManager.initialize(withToken: token)
+        smlManager.initialize(withToken: token, isVideoOnly: false)
         
         
  > the token can be created here (iOS_SDK):http://sunnymob.com/dev/apps/index
  
-  Step 4: You can now use any of the following two methods to show advertisement in your application:
+  Step 4: You can now use the following lines of code to show Ad in your application:
   
-  A)
+  A) Get shared instance of smlManager and use it to show Ads.
   
-    	
     	let smlManager = SMLManager.sharedInstance()
-
-        //SMLManager used for showing the ad on present view contorller
-
-        smlManager.showAdvertisement(self, didFinish: {
-            (status: SMLAdvertisementStatus) in
-            
-            //Use callback status returned by the SDK
-            switch status {
-                case .Complete:
-                    //print("Ad shown to user successfully")
-                    break
-                case .Ready:
-                    print("NOW READY TO SHOW AD")
-                    //If your application is having user intensive functionality, you can choose to comment the following line of code.
-                    smlManager.showAdvertisement(self, didFinish: nil)
-                    break
-                case .Error:
-                    print("Error! Please check your token or contact SunnyMob Customer Care")
-                    break
-            }
-        })
-
+        //SMLManager used for showing the ad controller
+        smlManager.showAdvertisement(self)
         
         
-  B)
-  
+  B) Adopt SMLManagerDelegate (Swift Protocol) in your view controller and add the following optional methods to learn the state of your advertisement:
   	
-    	let smlManager = SMLManager.sharedInstance()
-        //If doesnt want to do anything, pass the call back method as nil
-        smlManager.showAdvertisement(self, didFinish: nil)
+	func smlDidShowAd() {
+        print("Ad displayed to user successfully")
+    	}
+    
+	func smlAdIsNowReady(campaignId:String, mediaType:String) {
+        	print("Ad is now ready for \(campaignId) with Media Type: \(mediaType)")
+	}
+    
+	func smlAdNotReady() {
+	        print("Ad is NOT ready to display")
+    	}
         
 
-**The call back method mentioned in part A can be used to learn if the ad is ready. You can use this opportunity to call the smlManager.showAdvertisement method again since it means that the ad was not ready when you called it last time.**
+**The adoption of mentioned protocol requires you to set the delegate somewhere. This might in ViewDidLoad of your ViewController. Please refer to the example project for more details.**
 
 > **Note: Make sure that you use “import Sunny” in the files where you are using smlManager.**
