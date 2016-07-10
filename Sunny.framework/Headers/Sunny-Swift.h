@@ -95,6 +95,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @import Foundation;
 @import Foundation.NSURLSession;
 @import ObjectiveC;
+@import SystemConfiguration;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -109,6 +110,11 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @property (nonatomic, readonly, copy) NSString * _Nonnull URLString;
 @end
 
+
+@interface NSURLRequest (SWIFT_EXTENSION(Sunny))
+@property (nonatomic, readonly, copy) NSString * _Nonnull URLString;
+@end
+
 @class NSMutableURLRequest;
 
 @interface NSURLRequest (SWIFT_EXTENSION(Sunny))
@@ -116,24 +122,71 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @end
 
 
-@interface NSURLRequest (SWIFT_EXTENSION(Sunny))
-@property (nonatomic, readonly, copy) NSString * _Nonnull URLString;
+@interface NSURLSession (SWIFT_EXTENSION(Sunny))
 @end
 
+@class NSNotificationCenter;
 
-@interface NSURLSession (SWIFT_EXTENSION(Sunny))
+SWIFT_CLASS("_TtC5Sunny12Reachability")
+@interface Reachability : NSObject
+@property (nonatomic, copy) void (^ _Nullable whenReachable)(Reachability * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable whenUnreachable)(Reachability * _Nonnull);
+@property (nonatomic) BOOL reachableOnWWAN;
+@property (nonatomic, strong) NSNotificationCenter * _Nonnull notificationCenter;
+@property (nonatomic, readonly, copy) NSString * _Nonnull currentReachabilityString;
+- (nonnull instancetype)initWithReachabilityRef:(SCNetworkReachabilityRef _Nonnull)reachabilityRef OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithHostname:(NSString * _Nonnull)hostname error:(NSError * _Nullable * _Null_unspecified)error;
++ (Reachability * _Nullable)reachabilityForInternetConnectionAndReturnError:(NSError * _Nullable * _Null_unspecified)error;
++ (Reachability * _Nullable)reachabilityForLocalWiFiAndReturnError:(NSError * _Nullable * _Null_unspecified)error;
+- (BOOL)startNotifierAndReturnError:(NSError * _Nullable * _Null_unspecified)error;
+- (void)stopNotifier;
+- (BOOL)isReachable;
+- (BOOL)isReachableViaWWAN;
+- (BOOL)isReachableViaWiFi;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+@end
+
+typedef SWIFT_ENUM(NSInteger, SMLAdvertisementStatus) {
+  SMLAdvertisementStatusComplete = 0,
+  SMLAdvertisementStatusReady = 1,
+  SMLAdvertisementStatusError = 2,
+};
+
+@protocol SMLManagerDelegate;
+@class UIViewController;
+
+SWIFT_PROTOCOL("_TtP5Sunny17SMLManagerService_")
+@protocol SMLManagerService
++ (id <SMLManagerService> _Nonnull)sharedInstance;
+@property (nonatomic, weak) id <SMLManagerDelegate> _Nullable delegate;
+- (void)initializeWithToken:(NSString * _Nonnull)token isVideoOnly:(BOOL)isVideoOnly;
+- (void)showAdvertisement:(UIViewController * _Nonnull)onController;
 @end
 
 
 SWIFT_CLASS("_TtC5Sunny10SMLManager")
-@interface SMLManager : NSObject
-- (void)initializeWithToken:(NSString * _Nonnull)token;
+@interface SMLManager : NSObject <SMLManagerService>
+@property (nonatomic, weak) id <SMLManagerDelegate> _Nullable delegate;
++ (id <SMLManagerService> _Nonnull)sharedInstance;
+- (void)initializeWithToken:(NSString * _Nonnull)token isVideoOnly:(BOOL)isVideoOnly;
+- (void)showAdvertisement:(UIViewController * _Nonnull)onController;
 @end
 
+
+SWIFT_PROTOCOL("_TtP5Sunny18SMLManagerDelegate_")
+@protocol SMLManagerDelegate
+@optional
+- (void)smlDidShowAd;
+- (void)smlAdNotReady;
+- (void)smlAdIsNowReady:(NSString * _Nonnull)campaignId mediaType:(NSString * _Nonnull)mediaType;
+@end
+
+
+@class NSURLSessionTask;
+@class TaskDelegate;
 @class NSError;
 @class NSURLAuthenticationChallenge;
 @class NSURLCredential;
-@class NSURLSessionTask;
 @class NSHTTPURLResponse;
 @class NSInputStream;
 @class NSURLSessionDataTask;
@@ -146,6 +199,8 @@ SWIFT_CLASS("_TtC5Sunny10SMLManager")
 /// Responsible for handling all delegate callbacks for the underlying session.
 SWIFT_CLASS("_TtCC5Sunny7Manager15SessionDelegate")
 @interface SessionDelegate : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate>
+- (TaskDelegate * _Nullable)objectForKeyedSubscript:(NSURLSessionTask * _Nonnull)task;
+- (void)setObject:(TaskDelegate * _Nullable)newValue forKeyedSubscript:(NSURLSessionTask * _Nonnull)task;
 
 /// Initializes the SessionDelegate instance.
 ///
@@ -155,6 +210,9 @@ SWIFT_CLASS("_TtCC5Sunny7Manager15SessionDelegate")
 
 /// Overrides default behavior for NSURLSessionDelegate method URLSession:didBecomeInvalidWithError:.
 @property (nonatomic, copy) void (^ _Nullable sessionDidBecomeInvalidWithError)(NSURLSession * _Nonnull, NSError * _Nullable);
+
+/// Overrides all behavior for NSURLSessionDelegate method URLSession:didReceiveChallenge:completionHandler: and requires the caller to call the completionHandler.
+@property (nonatomic, copy) void (^ _Nullable sessionDidReceiveChallengeWithCompletion)(NSURLSession * _Nonnull, NSURLAuthenticationChallenge * _Nonnull, void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable));
 
 /// Overrides default behavior for NSURLSessionDelegate method URLSessionDidFinishEventsForBackgroundURLSession:.
 @property (nonatomic, copy) void (^ _Nullable sessionDidFinishEventsForBackgroundURLSession)(NSURLSession * _Nonnull);
@@ -183,8 +241,17 @@ SWIFT_CLASS("_TtCC5Sunny7Manager15SessionDelegate")
 /// Overrides default behavior for NSURLSessionTaskDelegate method URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:.
 @property (nonatomic, copy) NSURLRequest * _Nullable (^ _Nullable taskWillPerformHTTPRedirection)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull, NSHTTPURLResponse * _Nonnull, NSURLRequest * _Nonnull);
 
+/// Overrides all behavior for NSURLSessionTaskDelegate method URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler: and requires the caller to call the completionHandler.
+@property (nonatomic, copy) void (^ _Nullable taskWillPerformHTTPRedirectionWithCompletion)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull, NSHTTPURLResponse * _Nonnull, NSURLRequest * _Nonnull, void (^ _Nonnull)(NSURLRequest * _Nullable));
+
+/// Overrides all behavior for NSURLSessionTaskDelegate method URLSession:task:didReceiveChallenge:completionHandler: and requires the caller to call the completionHandler.
+@property (nonatomic, copy) void (^ _Nullable taskDidReceiveChallengeWithCompletion)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull, NSURLAuthenticationChallenge * _Nonnull, void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable));
+
 /// Overrides default behavior for NSURLSessionTaskDelegate method URLSession:session:task:needNewBodyStream:.
-@property (nonatomic, copy) NSInputStream * _Null_unspecified (^ _Nullable taskNeedNewBodyStream)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull);
+@property (nonatomic, copy) NSInputStream * _Nullable (^ _Nullable taskNeedNewBodyStream)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull);
+
+/// Overrides all behavior for NSURLSessionTaskDelegate method URLSession:session:task:needNewBodyStream: and requires the caller to call the completionHandler.
+@property (nonatomic, copy) void (^ _Nullable taskNeedNewBodyStreamWithCompletion)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull, void (^ _Nonnull)(NSInputStream * _Nullable));
 
 /// Overrides default behavior for NSURLSessionTaskDelegate method URLSession:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:.
 @property (nonatomic, copy) void (^ _Nullable taskDidSendBodyData)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull, int64_t, int64_t, int64_t);
@@ -252,6 +319,9 @@ SWIFT_CLASS("_TtCC5Sunny7Manager15SessionDelegate")
 /// Overrides default behavior for NSURLSessionDataDelegate method URLSession:dataTask:didReceiveResponse:completionHandler:.
 @property (nonatomic, copy) NSURLSessionResponseDisposition (^ _Nullable dataTaskDidReceiveResponse)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSURLResponse * _Nonnull);
 
+/// Overrides all behavior for NSURLSessionDataDelegate method URLSession:dataTask:didReceiveResponse:completionHandler: and requires caller to call the completionHandler.
+@property (nonatomic, copy) void (^ _Nullable dataTaskDidReceiveResponseWithCompletion)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSURLResponse * _Nonnull, void (^ _Nonnull)(NSURLSessionResponseDisposition));
+
 /// Overrides default behavior for NSURLSessionDataDelegate method URLSession:dataTask:didBecomeDownloadTask:.
 @property (nonatomic, copy) void (^ _Nullable dataTaskDidBecomeDownloadTask)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSURLSessionDownloadTask * _Nonnull);
 
@@ -259,7 +329,10 @@ SWIFT_CLASS("_TtCC5Sunny7Manager15SessionDelegate")
 @property (nonatomic, copy) void (^ _Nullable dataTaskDidReceiveData)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSData * _Nonnull);
 
 /// Overrides default behavior for NSURLSessionDataDelegate method URLSession:dataTask:willCacheResponse:completionHandler:.
-@property (nonatomic, copy) NSCachedURLResponse * _Null_unspecified (^ _Nullable dataTaskWillCacheResponse)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSCachedURLResponse * _Nonnull);
+@property (nonatomic, copy) NSCachedURLResponse * _Nullable (^ _Nullable dataTaskWillCacheResponse)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSCachedURLResponse * _Nonnull);
+
+/// Overrides all behavior for NSURLSessionDataDelegate method URLSession:dataTask:willCacheResponse:completionHandler: and requires caller to call the completionHandler.
+@property (nonatomic, copy) void (^ _Nullable dataTaskWillCacheResponseWithCompletion)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSCachedURLResponse * _Nonnull, void (^ _Nonnull)(NSCachedURLResponse * _Nullable));
 
 /// Tells the delegate that the data task received the initial reply (headers) from the server.
 ///

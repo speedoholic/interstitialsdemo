@@ -9,11 +9,38 @@
 import UIKit
 import Sunny
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SMLManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let smlManager = SMLManager.sharedInstance()
+        smlManager.delegate = self
+    }
+    
+    @IBAction func showAdButtonTapped(sender: AnyObject) {
+        showAd()
+    }
+    
+    func smlDidShowAd() {
+        print("Ad displayed to user successfully")
+    }
+    
+    func smlAdIsNowReady(campaignId:String, mediaType:String) {
+        print("Ad is now ready for \(campaignId) with Media Type: \(mediaType)")
+    }
+    
+    func smlAdNotReady() {
+        print("Ad is NOT ready to display")
+    }
+    
+    
+    // User action methods
+    
+    
+    func showAd() {
+        let smlManager = SMLManager.sharedInstance()
+        //SMLManager used for showing the ad controller
+        smlManager.showAdvertisement(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,35 +48,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showAdButtonTapped(sender: AnyObject) {
-        showAdWithCallback()
-    }
     
-    
-    func showAdWithCallback () {
-        
-        let smlManager = SMLManager.sharedInstance()
-        
-        smlManager.showAdvertisement(self, didFinish: {
-            (status: SMLAdvertisementStatus) in
-            
-            //Use callback status returned by the SDK
-            switch status {
-                case .Complete:
-                    //print("Ad shown to user successfully")
-                    break
-                case .Ready:
-                    print("NOW READY TO SHOW AD")
-                    //If your application is having user intensive functionality, you can choose to comment the following line of code.
-                    smlManager.showAdvertisement(self, didFinish: nil)
-                    break
-                case .Error:
-                    print("Error! Please check your token or contact SunnyMob Customer Care")
-                    break
-            }
-        })
-    }
-
 
 }
 

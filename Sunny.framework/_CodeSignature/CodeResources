@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Sunny-Swift.h</key>
 		<data>
-		A3zZUn6UX5SoQVvB4H+tTcuWjak=
+		6UFYCv+x6bdCZiajQmtSINF8+Kw=
 		</data>
 		<key>Headers/Sunny.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info-tvOS.plist</key>
 		<data>
-		/9m7QD5zusSuXmNXfiwkWtFMy2w=
+		qknMnypDOC/uQOr/oLAKkJwvpmE=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -22,19 +22,19 @@
 		</data>
 		<key>Modules/Sunny.swiftmodule/arm.swiftdoc</key>
 		<data>
-		JC+lCLb8EvLqCBHreSSr0vNJBVo=
+		Id8m1zdMFyfDFpRC/1L44THdhk0=
 		</data>
 		<key>Modules/Sunny.swiftmodule/arm.swiftmodule</key>
 		<data>
-		AvOQ+S1wFoRqoMjDqYfMerkL/QU=
+		NtKetwWcU58VJSDs7eNrgTsedE0=
 		</data>
 		<key>Modules/Sunny.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		8gjrMMD/EtT5xXtnqTuJS1tsY98=
+		D0AOLX2xBNNpRsR8yZH4uPCIOaw=
 		</data>
 		<key>Modules/Sunny.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		Xn5hzl45WT5sw5O2Y5ZzEt8Up+E=
+		v33bPNJacUdvI0QLySDMI5+bk+8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -46,19 +46,19 @@
 		</data>
 		<key>SMLMain.storyboardc/N31-7W-iyu-view-zke-uZ-5a5.nib</key>
 		<data>
-		y5CYWuwUKUE3Nc/3C1PguyJkst8=
+		eSfrjEbIo0YHTOBiHircgs5RhXk=
 		</data>
 		<key>SMLMain.storyboardc/W3y-Ea-CUz-view-h1T-Sj-gwj.nib</key>
 		<data>
-		PnxIeekDaiZiM3oOc04VLQecCco=
+		iF31due1iugSLfAaEZk4o2YvK2w=
 		</data>
 		<key>SMLMain.storyboardc/advertisementController.nib</key>
 		<data>
-		bYPgK1p6txd7n0Cu31wEnINSZ2c=
+		92kRbo+ow4hIng3Yuj7DVwNH03c=
 		</data>
 		<key>SMLMain.storyboardc/smlVideoController.nib</key>
 		<data>
-		A7rTUsprXJ/xI28LDSeZ1kyxeig=
+		Kjx7Q2dn4fjObY7ZyoDuw/DsK1o=
 		</data>
 		<key>SML_download_button@2x.png</key>
 		<data>
@@ -68,13 +68,21 @@
 		<data>
 		f1jy7GXSMm3/GYwCzHjWcWNSN78=
 		</data>
-		<key>redCross@2x.png</key>
+		<key>close@2x.png</key>
 		<data>
-		v37HdNzsBUTS/KakrV4iUqLdAdY=
+		ZcXkmPMQkLbUit93XRLVd7tl/wQ=
 		</data>
-		<key>redCross@3x.jpg</key>
+		<key>close@3x.png</key>
 		<data>
-		PK4GtroS7euj0gv7qJYpKJbUBoI=
+		bJHp8cQn2QGo+RaRcqyDtddrR4U=
+		</data>
+		<key>download@2x.png</key>
+		<data>
+		2F9wT9uOtOda6JbJUJTBNyDy9HI=
+		</data>
+		<key>download@3x.png</key>
+		<data>
+		KcSsk6NUSrCQ3LMUY/VbjJxLruI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -83,11 +91,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			A3zZUn6UX5SoQVvB4H+tTcuWjak=
+			6UFYCv+x6bdCZiajQmtSINF8+Kw=
 			</data>
 			<key>hash2</key>
 			<data>
-			m85cgoKEGhlw2hocZQugGSXR1iVbyqsWr0bId7R8xuw=
+			mQnTh1TWMqa0w8NEH+VSDEf91sbKEAvSgx+KRhSwvCo=
 			</data>
 		</dict>
 		<key>Headers/Sunny.h</key>
@@ -105,55 +113,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/9m7QD5zusSuXmNXfiwkWtFMy2w=
+			qknMnypDOC/uQOr/oLAKkJwvpmE=
 			</data>
 			<key>hash2</key>
 			<data>
-			QryMIkFixLBy3nf+1IRsXxdPcKX6yDC9/Dtup6kyi50=
+			GUQg50RK5jFcUcOEc2GiPMbAnFXwv6zSvUrzr8Br70U=
 			</data>
 		</dict>
 		<key>Modules/Sunny.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JC+lCLb8EvLqCBHreSSr0vNJBVo=
+			Id8m1zdMFyfDFpRC/1L44THdhk0=
 			</data>
 			<key>hash2</key>
 			<data>
-			KuiLX1m+VJcVxdzO1/vbp2OsVL/MakRjc7aL7gRoI8M=
+			miNnzFDFIoUpszwi/gNXbKeHo6ru76H4vSnUq0av6kc=
 			</data>
 		</dict>
 		<key>Modules/Sunny.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AvOQ+S1wFoRqoMjDqYfMerkL/QU=
+			NtKetwWcU58VJSDs7eNrgTsedE0=
 			</data>
 			<key>hash2</key>
 			<data>
-			GehGy4Cz3IEXAE01Rdb+dA52VnV9czKEQcL9/OsE584=
+			ZA/eGCNK3VqpxShZNkq6U8Al8ttz/ApauvX+l8/P7V8=
 			</data>
 		</dict>
 		<key>Modules/Sunny.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8gjrMMD/EtT5xXtnqTuJS1tsY98=
+			D0AOLX2xBNNpRsR8yZH4uPCIOaw=
 			</data>
 			<key>hash2</key>
 			<data>
-			3ZdQzDUmuy0RSB05bDZXSSVdCMuolHy/ZS7C/N4wApg=
+			s4kCMORh9w/yPW9U9RPETe8cFTZviBJSf9wAJcH3GAc=
 			</data>
 		</dict>
 		<key>Modules/Sunny.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Xn5hzl45WT5sw5O2Y5ZzEt8Up+E=
+			v33bPNJacUdvI0QLySDMI5+bk+8=
 			</data>
 			<key>hash2</key>
 			<data>
-			iu3X3Rt4hNRMMYaoQjuCDi6FM4vJ+GFoSmaKSpA2jk8=
+			VNRZcHjwdhrOcE/vJgm926fMABQLj11CFWYQr38yKTA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -182,44 +190,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			y5CYWuwUKUE3Nc/3C1PguyJkst8=
+			eSfrjEbIo0YHTOBiHircgs5RhXk=
 			</data>
 			<key>hash2</key>
 			<data>
-			FxSqyHPCvdnIOxye33NV/c/F0NMhPeXBDoDgXbQ0c+U=
+			zcAmlw+O2D+j6v8p5hJn5sondHA4Ttxe99VkirtB8As=
 			</data>
 		</dict>
 		<key>SMLMain.storyboardc/W3y-Ea-CUz-view-h1T-Sj-gwj.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PnxIeekDaiZiM3oOc04VLQecCco=
+			iF31due1iugSLfAaEZk4o2YvK2w=
 			</data>
 			<key>hash2</key>
 			<data>
-			GVTTZjy49TPurQEUDPHyO4q/OJ5uZAANXKUO8i0wyFI=
+			pGu/nAnTJlb9NeRwV2U5FyJNjnT4qX5s/wCY6Q4hlEY=
 			</data>
 		</dict>
 		<key>SMLMain.storyboardc/advertisementController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bYPgK1p6txd7n0Cu31wEnINSZ2c=
+			92kRbo+ow4hIng3Yuj7DVwNH03c=
 			</data>
 			<key>hash2</key>
 			<data>
-			DgYMdWHskuTfg5adUMlnfrSf0nRWdD+F1XjB05t/MmI=
+			kKuv17N7ITuRfseefKkrms9vODZTSvImSSSvd/HAvdk=
 			</data>
 		</dict>
 		<key>SMLMain.storyboardc/smlVideoController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			A7rTUsprXJ/xI28LDSeZ1kyxeig=
+			Kjx7Q2dn4fjObY7ZyoDuw/DsK1o=
 			</data>
 			<key>hash2</key>
 			<data>
-			MuKjgeAd41CnL/MOqzugxSNju9I1+Ad/gr8WAD1Xoyk=
+			/nzyJrv+ovlGwZwC+TChEi0fCF0LRMorDyVW/PhOJA8=
 			</data>
 		</dict>
 		<key>SML_download_button@2x.png</key>
@@ -244,26 +252,48 @@
 			AA6YMZTgTAHVka5CIRLkTWqstiMHQGwx+CdlAF9HZbw=
 			</data>
 		</dict>
-		<key>redCross@2x.png</key>
+		<key>close@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			v37HdNzsBUTS/KakrV4iUqLdAdY=
+			ZcXkmPMQkLbUit93XRLVd7tl/wQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			QHyAMxn6pj0lUbvBG+QV+Sl0jqlBSQFuwIHtIZWY7wE=
+			eo6GaT6anlaKrqRs4Y/XvjoiY9vIqSaP4d3ns3aF8Yk=
 			</data>
 		</dict>
-		<key>redCross@3x.jpg</key>
+		<key>close@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PK4GtroS7euj0gv7qJYpKJbUBoI=
+			bJHp8cQn2QGo+RaRcqyDtddrR4U=
 			</data>
 			<key>hash2</key>
 			<data>
-			K16GTKTc+pvQXsSkwCVnmI3VT5wCxOGCfsU9We6Z5KY=
+			NjHNYQlV5nMG1CHTZmMb45A2rFAq/Rkyli456aHUpfo=
+			</data>
+		</dict>
+		<key>download@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2F9wT9uOtOda6JbJUJTBNyDy9HI=
+			</data>
+			<key>hash2</key>
+			<data>
+			oh782A3TOa1FIKIKxUXudyAgJm9ErLsw3Z0xJboA3Js=
+			</data>
+		</dict>
+		<key>download@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			KcSsk6NUSrCQ3LMUY/VbjJxLruI=
+			</data>
+			<key>hash2</key>
+			<data>
+			VoYNKAO6qmzjcsrg/JLyjhxMf0yBKYlveT4Qn4GLWjM=
 			</data>
 		</dict>
 	</dict>

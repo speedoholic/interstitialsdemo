@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97506CD71D324A87008A7FE4 /* Sunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CD61D324A87008A7FE4 /* Sunny.framework */; };
+		97506CD81D324A8F008A7FE4 /* Sunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CD61D324A87008A7FE4 /* Sunny.framework */; };
+		97506CD91D324A8F008A7FE4 /* Sunny.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CD61D324A87008A7FE4 /* Sunny.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97C093A01CED5C1B004E1223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C0939F1CED5C1B004E1223 /* AppDelegate.swift */; };
 		97C093A21CED5C1B004E1223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C093A11CED5C1B004E1223 /* ViewController.swift */; };
 		97C093A71CED5C1B004E1223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C093A61CED5C1B004E1223 /* Assets.xcassets */; };
 		97C093AA1CED5C1B004E1223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C093A81CED5C1B004E1223 /* LaunchScreen.storyboard */; };
 		97C093B21CED5C2A004E1223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C093B11CED5C2A004E1223 /* Main.storyboard */; };
-		97C093B51CED5C6F004E1223 /* Sunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C093B41CED5C6F004E1223 /* Sunny.framework */; };
-		97C093B61CED5C7A004E1223 /* Sunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C093B41CED5C6F004E1223 /* Sunny.framework */; };
-		97C093B71CED5C7A004E1223 /* Sunny.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97C093B41CED5C6F004E1223 /* Sunny.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97C093BB1CED5D66004E1223 /* SunnymobLOGO.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 97C093BA1CED5D66004E1223 /* SunnymobLOGO.jpg */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				97C093B71CED5C7A004E1223 /* Sunny.framework in Embed Frameworks */,
+				97506CD91D324A8F008A7FE4 /* Sunny.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		97506CD61D324A87008A7FE4 /* Sunny.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sunny.framework; sourceTree = "<group>"; };
 		97C0939C1CED5C1B004E1223 /* SunnyMobDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyMobDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C0939F1CED5C1B004E1223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97C093A11CED5C1B004E1223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		97C093A91CED5C1B004E1223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C093AB1CED5C1B004E1223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97C093B11CED5C2A004E1223 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		97C093B41CED5C6F004E1223 /* Sunny.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sunny.framework; sourceTree = "<group>"; };
 		97C093BA1CED5D66004E1223 /* SunnymobLOGO.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SunnymobLOGO.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,8 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97C093B61CED5C7A004E1223 /* Sunny.framework in Frameworks */,
-				97C093B51CED5C6F004E1223 /* Sunny.framework in Frameworks */,
+				97506CD81D324A8F008A7FE4 /* Sunny.framework in Frameworks */,
+				97506CD71D324A87008A7FE4 /* Sunny.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 		97C093B31CED5C66004E1223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97C093B41CED5C6F004E1223 /* Sunny.framework */,
+				97506CD61D324A87008A7FE4 /* Sunny.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,6 +137,7 @@
 				TargetAttributes = {
 					97C0939B1CED5C1B004E1223 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = JJH59JSZ62;
 					};
 				};
 			};
@@ -283,11 +284,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SunnyMobDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunnymob.SunnyMobDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,11 +301,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SunnyMobDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunnymob.SunnyMobDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -328,6 +333,7 @@
 				97C093B01CED5C1B004E1223 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

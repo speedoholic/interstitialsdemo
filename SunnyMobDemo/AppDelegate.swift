@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = "1ebbd869-0d6d-44f1-a974-a6e2db04b4a6"
         
         //SMLManager Usage for Initializing
-        smlManager.initialize(withToken: token)
+        smlManager.initialize(withToken: token, isVideoOnly: false)
         return true
     }
 
