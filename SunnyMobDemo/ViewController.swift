@@ -33,6 +33,10 @@ class ViewController: UIViewController, SMLManagerDelegate {
         print("Ad is NOT ready to display")
     }
     
+    func smlAdClosed() {
+        print("Ad closed by user")
+    }
+    
     
     // User action methods
     

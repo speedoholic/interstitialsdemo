@@ -178,6 +178,7 @@ SWIFT_PROTOCOL("_TtP5Sunny18SMLManagerDelegate_")
 @optional
 - (void)smlDidShowAd;
 - (void)smlAdNotReady;
+- (void)smlAdClosed;
 - (void)smlAdIsNowReady:(NSString * _Nonnull)campaignId mediaType:(NSString * _Nonnull)mediaType;
 @end
 

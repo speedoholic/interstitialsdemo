@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97506CD71D324A87008A7FE4 /* Sunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CD61D324A87008A7FE4 /* Sunny.framework */; };
-		97506CD81D324A8F008A7FE4 /* Sunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CD61D324A87008A7FE4 /* Sunny.framework */; };
-		97506CD91D324A8F008A7FE4 /* Sunny.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CD61D324A87008A7FE4 /* Sunny.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97506CE31D339544008A7FE4 /* Sunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CE21D339544008A7FE4 /* Sunny.framework */; };
+		97506CE41D33954A008A7FE4 /* Sunny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CE21D339544008A7FE4 /* Sunny.framework */; };
+		97506CE51D33954A008A7FE4 /* Sunny.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97506CE21D339544008A7FE4 /* Sunny.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97C093A01CED5C1B004E1223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C0939F1CED5C1B004E1223 /* AppDelegate.swift */; };
 		97C093A21CED5C1B004E1223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C093A11CED5C1B004E1223 /* ViewController.swift */; };
 		97C093A71CED5C1B004E1223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C093A61CED5C1B004E1223 /* Assets.xcassets */; };
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				97506CD91D324A8F008A7FE4 /* Sunny.framework in Embed Frameworks */,
+				97506CE51D33954A008A7FE4 /* Sunny.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,7 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		97506CD61D324A87008A7FE4 /* Sunny.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sunny.framework; sourceTree = "<group>"; };
+		97506CE21D339544008A7FE4 /* Sunny.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sunny.framework; sourceTree = "<group>"; };
 		97C0939C1CED5C1B004E1223 /* SunnyMobDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunnyMobDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C0939F1CED5C1B004E1223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97C093A11CED5C1B004E1223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97506CD81D324A8F008A7FE4 /* Sunny.framework in Frameworks */,
-				97506CD71D324A87008A7FE4 /* Sunny.framework in Frameworks */,
+				97506CE41D33954A008A7FE4 /* Sunny.framework in Frameworks */,
+				97506CE31D339544008A7FE4 /* Sunny.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 		97C093B31CED5C66004E1223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97506CD61D324A87008A7FE4 /* Sunny.framework */,
+				97506CE21D339544008A7FE4 /* Sunny.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
