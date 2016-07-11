@@ -47,6 +47,10 @@ Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lin
 	func smlAdNotReady() {
 	        print("Ad is NOT ready to display")
     	}
+
+	func smlAdClosed() {
+		print("Ad closed by user")
+	}
         
 
 **The adoption of mentioned protocol requires you to set the delegate somewhere. This might in ViewDidLoad of your ViewController. Please refer to the example project for more details.**
