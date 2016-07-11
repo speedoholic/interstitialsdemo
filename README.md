@@ -53,6 +53,9 @@ Step 3: Go to Appdelegate file and add “import Sunny”. Add the following lin
 	}
         
 
-**The adoption of mentioned protocol requires you to set the delegate somewhere. This might in ViewDidLoad of your ViewController. Please refer to the example project for more details.**
+**The adoption of mentioned protocol requires you to set the delegate somewhere. This might be done in ViewDidLoad method of your ViewController. Please refer to the example project for more details.**
+
+	let smlManager = SMLManager.sharedInstance()
+        smlManager.delegate = self
 
 > **Note: Make sure that you use “import Sunny” in the files where you are using smlManager.**
