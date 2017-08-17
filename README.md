@@ -1,4 +1,4 @@
-# sunnyMobDemo
+# interstitialsDemo
 Demo application featuring the use of Sunny Framework for displaying video ads and interstitials in your iOS application. 
 
 
